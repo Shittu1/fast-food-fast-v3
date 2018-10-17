@@ -45,4 +45,5 @@ class Orders {
   }
 }
 
-export default new Orders();
+// export default new Orders();
+module.exports = Orders;
