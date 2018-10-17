@@ -9,12 +9,13 @@ chai.should();
 
 
 describe('THE HOME PAGE', () => {
-  it('should display a welcome message on / GET', () => {
+  it('should display a welcome message on / GET', (done) => {
     chai.request(app)
       .get('/')
       .end((err, res) => {
         res.should.have.status(200);
       });
+      done();
   });
 });
 
@@ -25,9 +26,10 @@ describe('ORDERS API Routes', () => {
       chai.request(app)
         .post('api/v1/orders')
         .send({
-          productName: 'Egg-Roll',
-          unitPrice: 5,
-          quantity: 1
+          id: 3,
+          productName: 'Suya',
+          unitPrice: 15,
+          quantity: 3
         })
         .end((err, res) => {
           res.should.have.status(201);
@@ -47,19 +49,47 @@ describe('ORDERS API Routes', () => {
     });
   });
 
+  describe('GET /orders/:id', () => {
+    it('fetches a specific order by id', (done) => {
+      const id = 2;
+      chai.request(app)
+        .get(`api/v1/orders/${id}`)
+        .end((err, res) => {
+          console.log("ERROR BEFORE ==>>", err);
+          res.should.have.status(200);
+        });
+        done();
+    });
+  });
 
-  //APIs for fetching a single order, updating and deleting are not working yet for me
+  describe('UPDATE /orders/:id', () => {
+    it('updates a specific order by id', (done) => {
+      const id = 2;
+      chai.request(app)
+        .put(`api/v1/orders/${id}`)
+        .send({
+          id: 2,
+          productName: 'Shawama',
+          unitPrice: 15,
+          quantity: 3
+        })
+        .end((err, res) => {
+          res.should.have.status(200);
+        });
+        done();
+    });
+  });
 
-  // describe('GET /order/:id', () => {
-  //   it('fetches a specific order by id', (done) => {
-  //     const id = Orders[0].id;
-  //     chai.request(app)
-  //       .get(`/api/v1/orders/${id}`)
-  //       .end((err, res) => {
-  //         res.should.have.status(200);
-  //       });
-  //       done();
-  //   });
-  // });
+  describe('DELETE /orders/:id', () => {
+    it('deletes a specific order by id', (done) => {
+      const id = 3;
+      chai.request(app)
+        .delete(`api/orders/${id}`)
+        .end((err, res) => {
+          res.should.have.status(204);
+        });
+        done();
+    });
+  });
 
 });

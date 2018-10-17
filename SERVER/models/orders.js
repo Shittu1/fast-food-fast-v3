@@ -3,7 +3,20 @@ import uuid from 'uuid';
 
 class Orders {
   constructor() {
-    this.orders = [];
+    this.orders = [
+      {
+        id: 1,
+        productName: 'Egg-Roll',
+        unitPrice: 5,
+        quantity: 1
+    },
+    {
+        id: 2,
+        productName: 'Sausage-Roll',
+        unitPrice: 10,
+        quantity: 2
+    }
+    ];
   }
 
   create(data) {
