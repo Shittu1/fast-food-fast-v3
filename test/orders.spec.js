@@ -1,17 +1,17 @@
+import assert from 'assert';
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../SERVER/app';
 
+let should = chai.should();
 chai.use(chaiHttp);
-let expect = chai.expect;
-
 
 describe('THE HOME PAGE', () => {
   it('should display a welcome message on / GET', (done) => {
     chai.request(app)
       .get('/')
       .end((err, res) => {
-        expect(res).to.have.status(200);
+        res.should.have.status(200);
       });
       done();
   });
@@ -30,7 +30,7 @@ describe('ORDERS API Routes', () => {
           quantity: 3
         })
         .end((err, res) => {
-          expect(res).to.have.status(201);
+          res.should.have.status(201);
         });
         done();
     });
@@ -41,7 +41,7 @@ describe('ORDERS API Routes', () => {
       chai.request(app)
         .get('api/v1/orders')
         .end((err, res) => {
-          expect(res).to.have.status(200);
+          res.should.have.status(200);
         });
         done();
     });
@@ -53,7 +53,7 @@ describe('ORDERS API Routes', () => {
       chai.request(app)
         .get(`api/v1/orders/${id}`)
         .end((err, res) => {
-          expect(res).to.have.status(200);
+          res.should.have.status(200);
         });
         done();
     });
@@ -71,7 +71,7 @@ describe('ORDERS API Routes', () => {
           quantity: 3
         })
         .end((err, res) => {
-          expect(res).to.have.status(200);
+          res.should.have.status(200);
         });
         done();
     });
@@ -83,7 +83,7 @@ describe('ORDERS API Routes', () => {
       chai.request(app)
         .delete(`api/orders/${id}`)
         .end((err, res) => {
-          expect(res).to.have.status(204);
+          res.should.have.status(204);
         });
         done();
     });
