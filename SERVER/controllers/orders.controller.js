@@ -1,5 +1,6 @@
-import ordersModel from '../models/orders';
+import orders from '../models/orders';
 
+const ordersModel = new orders()
 const Orders = {
   
   create(req, res) {
@@ -16,7 +17,8 @@ const Orders = {
   },
 
   getOne(req, res) {
-      const order = ordersModel.findOne(req.params.id);
+      const id = parseInt(req.params.id, 10);
+      const order = ordersModel.findOne(id);
       if(!order) {
         return res.status(404).send({message: 'order not found'});
       }
@@ -24,20 +26,22 @@ const Orders = {
   },
 
   update(req, res) {
-    const order = ordersModel.findOne(req.params.id);
+    const id = parseInt(req.params.id, 10);
+    const order = ordersModel.findOne(id);
     if(!order) {
       return res.status(404).send({message: 'order not found'});
     }
-    const updatedOrder = ordersModel.update(req.params.id, req.body);
+    const updatedOrder = ordersModel.update(id, req.body);
     return res.status(200).send(order);
   },
 
   delete(req, res) {
-    const order = ordersModel.findOne(req.params.id);
+    const id = parseInt(req.params.id, 10);    
+    const order = ordersModel.findOne(id);
     if(!order) {
       return res.status(404).send({message: 'order not found'});
     }
-    const ref = ordersModel.delete(req.params.id);
+    const ref = ordersModel.delete(id);
     return res.status(204).send(ref);
   }
 }
