@@ -19,7 +19,7 @@ var app = (0, _express2.default)();
 app.use(_bodyParser2.default.json());
 
 app.get('/', function (req, res) {
-  res.send('Welcome to fast food fast');
+  res.status(200).send('Welcome to fast food fast');
 });
 
 var PORT = 3000 || process.env.PORT;

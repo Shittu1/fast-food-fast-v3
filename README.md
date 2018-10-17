@@ -18,3 +18,6 @@ Fast Food Fast is an online food ordering service site.
 3. https://travishorn.com/setting-up-eslint-on-vs-code-with-airbnb-javascript-style-guide-6eb78a535ba6
 4. https://codeburst.io/javascript-unit-testing-using-mocha-and-chai-1d97d9f18e71
 5. https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/newline-after-import.md
+6. Babel for development and production - https://github.com/babel/example-node-server
+7. https://stackoverflow.com/questions/23327010/how-to-generate-unique-id-with-node-js
+8. https://www.codementor.io/olawalealadeusi896/building-simple-api-with-es6-krn8xx3k6
