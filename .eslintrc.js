@@ -13,7 +13,8 @@ module.exports = {
         "linebreak-style": [
             "error",
             "unix"
-        ]
+        ], 
+        "import/newline-after-import": ["error", { "count": 1 }]
     },
     env: {
         "browser": true,

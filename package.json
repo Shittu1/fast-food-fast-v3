@@ -4,7 +4,11 @@
   "description": "Fast Food Fast is an online food ordering service site.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel SERVER -d build",
+    "predev": "npm run build -- --watch",
+    "lint": "eslint SERVER/**",
+    "test": "mocha --compilers js:babel-core/register --recursive test/**/*.spec.js",
+    "dev": "node SERVER/app.js"
   },
   "repository": {
     "type": "git",
@@ -21,12 +25,21 @@
   },
   "homepage": "https://github.com/Shittu1/fast-food-fast-v3#readme",
   "dependencies": {
+    "babel-register": "^6.26.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4"
   },
   "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/register": "^7.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
     "eslint": "^5.7.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0"
+    "eslint-plugin-import": "^2.14.0",
+    "mocha": "^5.2.0"
   }
 }
