@@ -1,6 +1,6 @@
 # Fast Food Fast
 
-
+[![Build Status](https://travis-ci.org/Shittu1/fast-food-fast-v3.svg?branch=master)](https://travis-ci.org/Shittu1/fast-food-fast-v3)
 
 Fast Food Fast is an online food ordering service site.
 
