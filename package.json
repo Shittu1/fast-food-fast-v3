@@ -1,0 +1,32 @@
+{
+  "name": "fast-food-fast-v3",
+  "version": "1.0.0",
+  "description": "Fast Food Fast is an online food ordering service site.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shittu1/fast-food-fast-v3.git"
+  },
+  "keywords": [
+    "fast",
+    "food"
+  ],
+  "author": "Adams Shittu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shittu1/fast-food-fast-v3/issues"
+  },
+  "homepage": "https://github.com/Shittu1/fast-food-fast-v3#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  }
+}
