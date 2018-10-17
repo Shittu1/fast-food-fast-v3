@@ -4,6 +4,9 @@ import ordersRouter from './routes/orders';
 
 const app = express();
 
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => res.status(200).send({ Message: 'Welcome to Fast food fast home page' }));

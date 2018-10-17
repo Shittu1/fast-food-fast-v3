@@ -12,8 +12,8 @@ class Orders {
       productName: data.productName || '',
       unitPrice: data.unitPrice || '',
       quantity: data.quantity || '',
-      createdDate: moment.now(),
-      modifiedDate: moment.now()
+      createdDate: moment().format('MM/DD/YYYY'),
+      modifiedDate: moment().format('MM/DD/YYYY')
     };
     this.orders.push(newOrder);
     return newOrder;
@@ -33,7 +33,7 @@ class Orders {
     this.orders[index].productName = data['productName'] || order.productName;
     this.orders[index].unitPrice = data['unitPrice'] || order.unitPrice; 
     this.orders[index].quantity = data['quantity'] || order.quantity;
-    this.orders[index].modifiedDate = moment.now();
+    this.orders[index].modifiedDate = moment().format('MM/DD/YYYY');
     return this.orders[index];
   }
 

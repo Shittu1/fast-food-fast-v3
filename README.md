@@ -21,3 +21,4 @@ Fast Food Fast is an online food ordering service site.
 6. Babel for development and production - https://github.com/babel/example-node-server
 7. https://stackoverflow.com/questions/23327010/how-to-generate-unique-id-with-node-js
 8. https://www.codementor.io/olawalealadeusi896/building-simple-api-with-es6-krn8xx3k6
+9. https://stackoverflow.com/questions/15993913/format-date-with-moment-js
