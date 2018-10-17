@@ -1,11 +1,9 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
-import uuid from 'uuid';
 import app from '../SERVER/app';
-import Orders from '../SERVER/models/orders';
 
 chai.use(chaiHttp);
-let should = chai.should();
+let expect = chai.expect;
 
 
 describe('THE HOME PAGE', () => {
@@ -13,7 +11,7 @@ describe('THE HOME PAGE', () => {
     chai.request(app)
       .get('/')
       .end((err, res) => {
-        res.should.have.status(200);
+        expect(res).to.have.status(200);
       });
       done();
   });
@@ -32,7 +30,7 @@ describe('ORDERS API Routes', () => {
           quantity: 3
         })
         .end((err, res) => {
-          res.should.have.status(201);
+          expect(res).to.have.status(201);
         });
         done();
     });
@@ -43,7 +41,7 @@ describe('ORDERS API Routes', () => {
       chai.request(app)
         .get('api/v1/orders')
         .end((err, res) => {
-          res.should.have.status(200);
+          expect(res).to.have.status(200);
         });
         done();
     });
@@ -55,8 +53,7 @@ describe('ORDERS API Routes', () => {
       chai.request(app)
         .get(`api/v1/orders/${id}`)
         .end((err, res) => {
-          console.log("ERROR BEFORE ==>>", err);
-          res.should.have.status(200);
+          expect(res).to.have.status(200);
         });
         done();
     });
@@ -74,7 +71,7 @@ describe('ORDERS API Routes', () => {
           quantity: 3
         })
         .end((err, res) => {
-          res.should.have.status(200);
+          expect(res).to.have.status(200);
         });
         done();
     });
@@ -86,7 +83,7 @@ describe('ORDERS API Routes', () => {
       chai.request(app)
         .delete(`api/orders/${id}`)
         .end((err, res) => {
-          res.should.have.status(204);
+          expect(res).to.have.status(204);
         });
         done();
     });
