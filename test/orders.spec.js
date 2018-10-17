@@ -5,7 +5,7 @@ import app from '../SERVER/app';
 import Orders from '../SERVER/models/orders';
 
 chai.use(chaiHttp);
-chai.should();
+let should = chai.should();
 
 
 describe('THE HOME PAGE', () => {
