@@ -1,6 +1,8 @@
 # Fast Food Fast
 
-[![Build Status](https://travis-ci.org/Shittu1/fast-food-fast-v3.svg?branch=master)](https://travis-ci.org/Shittu1/fast-food-fast-v3)
+[![Build Status](https://travis-ci.org/Shittu1/fast-food-fast-v3.svg?branch=develop)](https://travis-ci.org/Shittu1/fast-food-fast-v3)
+
+[![Coverage Status](https://coveralls.io/repos/github/Shittu1/fast-food-fast-v3/badge.svg?branch=develop)](https://coveralls.io/github/Shittu1/fast-food-fast-v3?branch=master)
 
 Fast Food Fast is an online food ordering service site.
 
@@ -30,4 +32,6 @@ Fast Food Fast is an online food ordering service site.
 10. https://stackoverflow.com/questions/15993913/format-date-with-moment-js
 11. https://blog.jscrambler.com/testing-apis-mocha-2/
 12. TravisCI - https://www.youtube.com/watch?v=FEXY1ZP-sBs
-13.  https://medium.com/kanssfer-consulting/testing-expressjs-rest-api-with-mocha-and-chai-90bf4178f15e
+13. https://medium.com/kanssfer-consulting/testing-expressjs-rest-api-with-mocha-and-chai-90bf4178f15e
+14. https://www.gregjs.com/javascript/2016/how-to-get-a-shiny-coverage-badge-for-your-github-project/
+15. https://medium.com/the-code-review/add-badges-for-travisci-coveralls-and-code-climate-to-your-readme-ruby-6d27caad74ed
