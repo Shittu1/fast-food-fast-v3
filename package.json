@@ -1,0 +1,48 @@
+{
+  "name": "fast-food-fast-v3",
+  "version": "1.0.0",
+  "description": "Fast Food Fast is an online food ordering service site.",
+  "main": "app.js",
+  "scripts": {
+    "build": "babel SERVER -d build",
+    "lint": "eslint SERVER/**",
+    "test": "mocha --compilers js:babel-core/register --recursive test/**/*.spec.js",
+    "start": "nodemon SERVER/app.js --exec babel-node --presets env"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shittu1/fast-food-fast-v3.git"
+  },
+  "keywords": [
+    "fast",
+    "food"
+  ],
+  "author": "Adams Shittu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shittu1/fast-food-fast-v3/issues"
+  },
+  "homepage": "https://github.com/Shittu1/fast-food-fast-v3#readme",
+  "dependencies": {
+    "babel-register": "^6.26.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "lowdb": "^1.0.0",
+    "moment": "^2.22.2",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/register": "^7.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.4"
+  }
+}
