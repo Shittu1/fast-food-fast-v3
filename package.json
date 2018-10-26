@@ -7,6 +7,8 @@
     "build": "babel SERVER -d build",
     "lint": "eslint SERVER/**",
     "test": "mocha --compilers js:babel-core/register --recursive test/**/*.spec.js",
+    "coverage": "node --harmony node_modules/istanbul/lib/cli.js cover _mocha -- -u exports -R test/**/*.spec.js",
+    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
     "start": "nodemon SERVER/app.js --exec babel-node --presets env"
   },
   "repository": {
@@ -39,9 +41,11 @@
     "babel-preset-env": "^1.7.0",
     "chai": "^4.2.0",
     "chai-http": "^4.2.0",
+    "coveralls": "^3.0.2",
     "eslint": "^5.7.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
+    "istanbul": "^0.4.5",
     "mocha": "^5.2.0",
     "nodemon": "^1.18.4"
   }
