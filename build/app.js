@@ -12,15 +12,31 @@ var _bodyParser = require('body-parser');
 
 var _bodyParser2 = _interopRequireDefault(_bodyParser);
 
+var _orders = require('./routes/orders');
+
+var _orders2 = _interopRequireDefault(_orders);
+
+var _orders3 = require('./models/orders');
+
+var _orders4 = _interopRequireDefault(_orders3);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var app = (0, _express2.default)();
 
+app.use(_express2.default.static(__dirname + '/build/'));
+app.use('/SERVER', _express2.default.static(__dirname + '/SERVER/'));
+
+app.use(_bodyParser2.default.urlencoded({
+  extended: true
+}));
 app.use(_bodyParser2.default.json());
 
 app.get('/', function (req, res) {
-  res.status(200).send('Welcome to fast food fast');
+  return res.status(200).send({ Message: 'Welcome to Fast food fast home page' });
 });
+
+app.use('/api/v1', _orders2.default);
 
 var PORT = 3000 || process.env.PORT;
 

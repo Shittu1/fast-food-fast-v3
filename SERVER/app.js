@@ -5,6 +5,9 @@ import Orders from './models/orders';
 
 const app = express();
 
+app.use(express.static(__dirname + '/build/'));
+app.use('/SERVER', express.static(__dirname + '/SERVER/'));
+
 app.use(bodyParser.urlencoded({
   extended: true
 }));
