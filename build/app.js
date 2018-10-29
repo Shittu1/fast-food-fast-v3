@@ -26,10 +26,6 @@ var app = (0, _express2.default)();
 
 var PORT = process.env.PORT || 3000;
 
-app.use(_express2.default.static(__dirname + '/UI/'));
-app.use(_express2.default.static(__dirname + '/build/'));
-app.use('/SERVER', _express2.default.static(__dirname + '/SERVER/'));
-
 app.use(_bodyParser2.default.urlencoded({
   extended: true
 }));

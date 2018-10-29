@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "babel SERVER -d build",
-    "lint": "eslint SERVER/**",
+    "lint": "eslint ./SERVER/**",
     "test": "mocha --exit --compilers js:babel-core/register --recursive test/**/*.spec.js ",
     "coverage": "nyc report --reporter=text-lcov",
     "coveralls": "nyc npm test && npm run coverage | coveralls",
@@ -33,11 +33,13 @@
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-register": "^6.26.0",
+    "body-parser": "^1.18.3",
     "chai": "^4.2.0",
     "chai-http": "^4.2.0",
-    "body-parser": "^1.18.3",
+    "dotenv": "^6.1.0",
     "express": "^4.16.4",
     "moment": "^2.22.2",
+    "pg": "^7.6.0",
     "uuid": "^3.3.2"
   },
   "devDependencies": {

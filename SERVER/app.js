@@ -7,10 +7,6 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-app.use(express.static(__dirname + '/UI/'));
-app.use(express.static(__dirname + '/build/'));
-app.use('/SERVER', express.static(__dirname + '/SERVER/'));
-
 app.use(bodyParser.urlencoded({
   extended: true
 }));
@@ -18,7 +14,8 @@ app.use(bodyParser.json());
 
 app.get('/', (req, res) => res.status(200).send({ Message: 'Welcome to Fast food fast home page' }));
 
-app.use('/api/v1', ordersRouter);
+
+app.use('/api/v1/orders', ordersRouter);
 
 app.listen(PORT, () => {
   console.log(`app is running on port ${PORT}`);

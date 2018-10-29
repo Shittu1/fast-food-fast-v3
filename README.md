@@ -33,3 +33,5 @@ Fast Food Fast is an online food ordering service site.
 13. https://medium.com/kanssfer-consulting/testing-expressjs-rest-api-with-mocha-and-chai-90bf4178f15e
 14. https://www.gregjs.com/javascript/2016/how-to-get-a-shiny-coverage-badge-for-your-github-project/
 15. https://medium.com/the-code-review/add-badges-for-travisci-coveralls-and-code-climate-to-your-readme-ruby-6d27caad74ed
+16. https://stackoverflow.com/questions/11919391/postgresql-error-fatal-role-username-does-not-exist
+17. https://medium.freecodecamp.org/how-to-get-started-with-postgresql-9d3bc1dd1b11

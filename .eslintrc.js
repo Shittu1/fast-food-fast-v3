@@ -10,7 +10,6 @@ module.exports = {
             "destructuring": "any",
             "ignoreReadBeforeAssign": false
         }],
-        "no-unused-vars": false,
         "linebreak-style": [
             "error",
             "unix"
