@@ -1,1 +1,1 @@
-web: node ./build/app.js 
+web: npn run serve 
