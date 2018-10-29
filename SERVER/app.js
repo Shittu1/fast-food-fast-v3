@@ -5,7 +5,7 @@ import Orders from './models/orders';
 
 const app = express();
 
-const PORT = 3000 || process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.static(__dirname + '/UI/'));
 app.use(express.static(__dirname + '/build/'));
