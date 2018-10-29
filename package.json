@@ -14,7 +14,7 @@
     "coverage": "nyc report --reporter=text-lcov",
     "coveralls": "nyc npm test && npm run coverage | coveralls",
     "start-dev": "nodemon SERVER/app.js --exec babel-node --presets env",
-    "start": "npm run build && node ./build/app.js"
+    "start": "node ./build/app.js"
   },
   "repository": {
     "type": "git",
