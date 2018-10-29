@@ -3,7 +3,7 @@ import chai from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../SERVER/app';
 
-let should = chai.should();
+let expect = chai.expect;
 chai.use(chaiHttp);
 
 describe('THE HOME PAGE', () => {
@@ -11,7 +11,7 @@ describe('THE HOME PAGE', () => {
     chai.request(app)
       .get('/')
       .end((err, res) => {
-        res.should.have.status(200);
+        expect(res.status).to.equal(200);
       });
       done();
   });
@@ -22,7 +22,7 @@ describe('ORDERS API Routes', () => {
   describe('POST /orders', () => {
     it('places a new order', (done) => {
       chai.request(app)
-        .post('api/v1/orders')
+        .post('/api/v1/orders')
         .send({
           id: 3,
           productName: 'Suya',
@@ -30,7 +30,7 @@ describe('ORDERS API Routes', () => {
           quantity: 3
         })
         .end((err, res) => {
-          res.should.have.status(201);
+          expect(res.status).to.equal(201);
         });
         done();
     });
@@ -39,9 +39,9 @@ describe('ORDERS API Routes', () => {
   describe('GET /orders', () => {
     it('returns all orders', (done) => {
       chai.request(app)
-        .get('api/v1/orders')
+        .get('/api/v1/orders')
         .end((err, res) => {
-          res.should.have.status(200);
+          expect(res.status).to.equal(200);
         });
         done();
     });
@@ -51,9 +51,9 @@ describe('ORDERS API Routes', () => {
     it('fetches a specific order by id', (done) => {
       const id = 2;
       chai.request(app)
-        .get(`api/v1/orders/${id}`)
+        .get(`/api/v1/orders/${id}`)
         .end((err, res) => {
-          res.should.have.status(200);
+          expect(res.status).to.equal(200);
         });
         done();
     });
@@ -63,7 +63,7 @@ describe('ORDERS API Routes', () => {
     it('updates a specific order by id', (done) => {
       const id = 2;
       chai.request(app)
-        .put(`api/v1/orders/${id}`)
+        .put(`/api/v1/orders/${id}`)
         .send({
           id: 2,
           productName: 'Shawama',
@@ -71,7 +71,7 @@ describe('ORDERS API Routes', () => {
           quantity: 3
         })
         .end((err, res) => {
-          res.should.have.status(200);
+          expect(res.status).to.equal(200);
         });
         done();
     });
@@ -79,11 +79,11 @@ describe('ORDERS API Routes', () => {
 
   describe('DELETE /orders/:id', () => {
     it('deletes a specific order by id', (done) => {
-      const id = 3;
+      const id = 2;
       chai.request(app)
-        .delete(`api/orders/${id}`)
+        .delete(`/api/v1/orders/${id}`)
         .end((err, res) => {
-          res.should.have.status(204);
+          expect(res.status).to.equal(204);
         });
         done();
     });
