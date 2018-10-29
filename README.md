@@ -2,7 +2,9 @@
 
 [![Build Status](https://travis-ci.org/Shittu1/fast-food-fast-v3.svg?branch=develop)](https://travis-ci.org/Shittu1/fast-food-fast-v3) 
 
-[![Coverage Status](https://coveralls.io/repos/github/Shittu1/fast-food-fast-v3/badge.svg?branch=develop)](https://coveralls.io/github/Shittu1/fast-food-fast-v3?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/Shittu1/fast-food-fast-v3/badge.svg?branch=develop)](https://coveralls.io/github/Shittu1/fast-food-fast-v3?branch=develop)
+
+[![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/Shittu1/fast-food-fast-v3)
 
 [![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/Shittu1/fast-food-fast-v3)
 
