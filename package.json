@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Fast Food Fast is an online food ordering service site.",
   "main": "app.js",
+  "private": true,
   "engine": {
     "node": "8.11.1",
     "npm": "6.4.0"
@@ -13,7 +14,8 @@
     "test": "mocha --exit --compilers js:babel-core/register --recursive test/**/*.spec.js ",
     "coverage": "nyc report --reporter=text-lcov",
     "coveralls": "nyc npm test && npm run coverage | coveralls",
-    "start": "nodemon SERVER/app.js --exec babel-node --presets env"
+    "start": "nodemon SERVER/app.js --exec babel-node --presets env",
+    "serve": "node build/app.js"
   },
   "repository": {
     "type": "git",
