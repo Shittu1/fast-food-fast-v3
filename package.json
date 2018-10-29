@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Fast Food Fast is an online food ordering service site.",
   "main": "app.js",
-  "private": true,
   "engines": {
     "node": "8.11.1",
     "npm": "6.4.0"
