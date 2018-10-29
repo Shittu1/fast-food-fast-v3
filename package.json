@@ -15,7 +15,7 @@
     "coverage": "nyc report --reporter=text-lcov",
     "coveralls": "nyc npm test && npm run coverage | coveralls",
     "start": "nodemon SERVER/app.js --exec babel-node --presets env",
-    "serve": "node build/app.js"
+    "serve": "node ./build/app.js"
   },
   "repository": {
     "type": "git",
@@ -32,6 +32,7 @@
   },
   "homepage": "https://github.com/Shittu1/fast-food-fast-v3#readme",
   "dependencies": {
+    "babel-cli": "^6.26.0",
     "babel-register": "^6.26.0",
     "chai": "^4.2.0",
     "chai-http": "^4.2.0",
@@ -44,7 +45,6 @@
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
     "@babel/register": "^7.0.0",
-    "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "coveralls": "^3.0.2",
     "eslint": "^5.7.0",
