@@ -1,7 +1,7 @@
 import { Router } from 'express';
-const router = Router();
-
 import ordersController from '../controllers/orders.controller';
+
+const router = Router();
 
 router.post('/', ordersController.create);
 router.get('/', ordersController.getAll);

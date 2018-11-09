@@ -1,7 +1,14 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import ordersRouter from './routes/orders';
-import Orders from './models/orders';
+import dotenv from 'dotenv';
+import 'babel-polyfill';
+import OrderWithJSObject from './usingJSObject/routes/orders';
+import OrderWithDb from './usingDB/routes/orders';
+import userWithDb from './usingDB/routes/user';
+import menuWithDb from './usingDB/routes/menu';
+
+dotenv.config();
+const Order = process.env.Type === 'db' ? OrderWithDb : OrderWithJSObject;
 
 const app = express();
 
@@ -15,7 +22,9 @@ app.use(bodyParser.json());
 app.get('/', (req, res) => res.status(200).send({ Message: 'Welcome to Fast food fast home page' }));
 
 
-app.use('/api/v1/orders', ordersRouter);
+app.use('/api/v1/orders', Order);
+app.use('/api/v1/users', userWithDb);
+app.use('/menu', menuWithDb);
 
 app.listen(PORT, () => {
   console.log(`app is running on port ${PORT}`);
