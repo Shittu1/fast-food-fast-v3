@@ -16,14 +16,11 @@ pool.on('connect', () => {
 const createOrderTable = () => {
   const queryText = `CREATE TABLE IF NOT EXISTS
   orders(
-    id SERIAL PRIMARY KEY,
-    productName varchar(250) NOT NULL,
-    unitPrice integer,
+    id serial PRIMARY KEY,
+    name varchar(250) NOT NULL,
+    price integer,
     quantity integer,
-    owner_id serial NOT NULL,
-    createdDate date,
-    modifiedDate date
-    FOREIGN KEY (owner_id) REFERENCES users (id) ON DELETE CASCADE
+    date TIMESTAMP DEFAULT now()
   )`;
 
   pool.query(queryText)
@@ -42,10 +39,10 @@ const createUserTable = () => {
   const queryText = `CREATE TABLE IF NOT EXISTS
       users(
         id SERIAL PRIMARY KEY,
-        email VARCHAR(128) UNIQUE NOT NULL,
-        password VARCHAR(128) NOT NULL,
-        created_date date,
-        modified_date date
+        firstname varchar(20) NOT NULL,
+        lastname varchar(20) NOT NULL,
+        email varchar(30) NOT NULL,
+        password varchar(150) NOT NULL
       )`;
 
   pool.query(queryText)
@@ -64,10 +61,10 @@ const createMenuTable = () => {
   const queryText = `CREATE TABLE IF NOT EXISTS
       menu(
         id SERIAL PRIMARY KEY,
-        name varchar(120) NOT NULL,
+        name varchar(250) NOT NULL,
         price integer,
-        details text(250),
-        date date
+        details text,
+        date TIMESTAMP DEFAULT now()
       )`;
 
   pool.query(queryText)
@@ -153,5 +150,3 @@ module.exports = {
   dropMenuTable,
   dropAllTables
 };
-
-require('make-runnable');

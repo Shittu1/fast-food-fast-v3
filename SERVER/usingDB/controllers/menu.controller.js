@@ -1,25 +1,16 @@
 import db from '../db/setup';
 
-const options = {
-  weekday: 'long',
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric'
-};
-const newDate = new Date().toLocaleDateString('en-US', options);
-
 const menu = {
   /** Create A Menu */
   async create(req, res) {
     const createQuery = `INSERT INTO
-      menu(name, price, details, date)
-      VALUES($1, $2, $3, $4)
+      menu(name, price, details)
+      VALUES($1, $2, $3)
       returning *`;
     const values = [
       req.body.name,
       req.body.price,
-      req.body.details,
-      newDate
+      req.body.details
     ];
 
     try {
@@ -34,7 +25,7 @@ const menu = {
   async getAll(req, res) {
     const findAllQuery = 'SELECT * FROM menu';
     try {
-      const { rows, rowCount } = await db.query(findAllquery);
+      const { rows, rowCount } = await db.query(findAllQuery);
       return res.status(200).send({ rows, rowCount });
     } catch (error) {
       return res.status(400).send(error);
@@ -59,8 +50,8 @@ const menu = {
   async update(req, res) {
     const findOneQuery = 'SELECT * FROM menu WHERE id=$1';
     const updateOneQuery = `UPDATE menu
-      SET name = $1, price = $2, details = $3, date = $4
-      WHERE id = $5 returning *`;
+      SET name = $1, price = $2, details = $3,
+      WHERE id = $4 returning *`;
     try {
       const { rows } = await db.query(findOneQuery, req.params.id);
       if (!rows[0]) {
@@ -69,8 +60,7 @@ const menu = {
       const values = [
         req.body.name || rows[0].name,
         req.body.price || rows[0].price,
-        req.body.details || rows[0].details,
-        newDate
+        req.body.details || rows[0].details
       ];
       const response = await db.query(updateOneQuery, values);
       return res.status(200).send(response.rows[0]);

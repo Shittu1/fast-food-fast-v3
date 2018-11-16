@@ -1,11 +1,11 @@
 import db from '../db/setup';
 import Helper from './helper';
-import { newDate } from './orders.controller';
 
 const User = {
   /** Create A User */
   async create(req, res) {
-    if (!req.body.email || !req.body.password) {
+    if (!req.body.firstname || !req.body.lastname
+      || !req.body.email || !req.body.password) {
       return res.status(400).send({ message: 'Some values are missing' });
     }
     if (!Helper.isValidEmail(req.body.email)) {
@@ -15,14 +15,14 @@ const User = {
     const hashPassword = Helper.hashPassword(req.body.password);
 
     const createQuery = `INSERT INTO
-        users(email, password, created_date, modified_date)
+        users(firstname, lastname, email, password)
         VALUES($1, $2, $3, $4)
         returning *`;
     const values = [
+      req.body.firstname,
+      req.body.lastname,
       req.body.email,
-      hashPassword,
-      newDate,
-      newDate
+      hashPassword
     ];
 
     try {
@@ -65,7 +65,7 @@ const User = {
   async delete(req, res) {
     const deleteQuery = 'DELETE FROM users where id=$1 returning *';
     try {
-      const { rows } = await db.query(deleteQuery, [req.user.id]);
+      const { rows } = await db.query(deleteQuery, [req.params.id]);
       if (!rows[0]) {
         return res.status(404).send({ message: 'user not found' });
       }
