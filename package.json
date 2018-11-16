@@ -10,7 +10,7 @@
   "scripts": {
     "build": "babel SERVER -d build",
     "lint": "eslint ./SERVER/**",
-    "test": "mocha --exit --compilers js:babel-core/register --recursive test/**/*.spec.js ",
+    "test": "mocha --exit --require babel-core/register --recursive test/**/*.spec.js ",
     "coverage": "nyc report --reporter=text-lcov",
     "coveralls": "nyc npm test && npm run coverage | coveralls",
     "start-dev": "nodemon --exec babel-node SERVER/app.js",

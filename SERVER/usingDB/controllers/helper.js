@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken';
 const Helper = {
   /** Hash Password */
   hashPassword(password) {
-    return bcrypt.hashsync(password, bcrypt.genSaltSync(8));
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(8));
   },
   /** Compare Passwords */
   comparePassword(hashPassword, password) {
