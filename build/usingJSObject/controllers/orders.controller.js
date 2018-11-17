@@ -38,7 +38,7 @@ var Orders = {
       return res.status(404).send({ message: 'order not found' });
     }
     var updatedOrder = ordersModel.update(id, req.body);
-    return res.status(200).send(order);
+    return res.status(200).send(updatedOrder);
   },
   delete: function _delete(req, res) {
     var id = parseInt(req.params.id, 10);
@@ -51,4 +51,6 @@ var Orders = {
   }
 };
 
+// eslint-disable-next-line linebreak-style
+// eslint-disable-next-line linebreak-style
 exports.default = Orders;

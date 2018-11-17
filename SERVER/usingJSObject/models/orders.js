@@ -9,13 +9,13 @@ class Orders {
         productName: 'Egg-Roll',
         unitPrice: 5,
         quantity: 1
-    },
-    {
+      },
+      {
         id: 2,
         productName: 'Sausage-Roll',
         unitPrice: 10,
         quantity: 2
-    }
+      }
     ];
   }
 
@@ -43,9 +43,9 @@ class Orders {
   update(id, data) {
     const order = this.findOne(id);
     const index = this.orders.indexOf(order);
-    this.orders[index].productName = data['productName'] || order.productName;
-    this.orders[index].unitPrice = data['unitPrice'] || order.unitPrice; 
-    this.orders[index].quantity = data['quantity'] || order.quantity;
+    this.orders[index].productName = data.productName || order.productName;
+    this.orders[index].unitPrice = data.unitPrice || order.unitPrice;
+    this.orders[index].quantity = data.quantity || order.quantity;
     this.orders[index].modifiedDate = moment().format('MM/DD/YYYY');
     return this.orders[index];
   }

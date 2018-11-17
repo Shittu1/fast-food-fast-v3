@@ -1,9 +1,8 @@
-import assert from 'assert';
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../SERVER/app';
 
-let expect = chai.expect;
+const { expect } = chai;
 chai.use(chaiHttp);
 
 describe('THE HOME PAGE', () => {
@@ -13,26 +12,24 @@ describe('THE HOME PAGE', () => {
       .end((err, res) => {
         expect(res.status).to.equal(200);
       });
-      done();
+    done();
   });
 });
 
 describe('ORDERS API Routes', () => {
-
   describe('POST /orders', () => {
     it('places a new order', (done) => {
       chai.request(app)
         .post('/api/v1/orders')
         .send({
-          id: 3,
-          productName: 'Suya',
-          unitPrice: 15,
+          name: 'Suya',
+          price: 15,
           quantity: 3
         })
         .end((err, res) => {
           expect(res.status).to.equal(201);
         });
-        done();
+      done();
     });
   });
 
@@ -43,7 +40,7 @@ describe('ORDERS API Routes', () => {
         .end((err, res) => {
           expect(res.status).to.equal(200);
         });
-        done();
+      done();
     });
   });
 
@@ -55,7 +52,7 @@ describe('ORDERS API Routes', () => {
         .end((err, res) => {
           expect(res.status).to.equal(200);
         });
-        done();
+      done();
     });
   });
 
@@ -65,15 +62,15 @@ describe('ORDERS API Routes', () => {
       chai.request(app)
         .put(`/api/v1/orders/${id}`)
         .send({
-          id: 2,
-          productName: 'Shawama',
-          unitPrice: 15,
+          id: `${id}`,
+          name: 'Shawama',
+          price: 15,
           quantity: 3
         })
         .end((err, res) => {
           expect(res.status).to.equal(200);
         });
-        done();
+      done();
     });
   });
 
@@ -85,8 +82,7 @@ describe('ORDERS API Routes', () => {
         .end((err, res) => {
           expect(res.status).to.equal(204);
         });
-        done();
+      done();
     });
   });
-
 });

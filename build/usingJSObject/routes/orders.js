@@ -10,10 +10,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var router = (0, _express.Router)();
 
-router.post('/orders', _orders2.default.create);
-router.get('/orders', _orders2.default.getAll);
-router.get('/orders/:id', _orders2.default.getOne);
-router.put('/orders/:id', _orders2.default.update);
-router.delete('/orders/:id', _orders2.default.delete);
+router.post('/', _orders2.default.create);
+router.get('/', _orders2.default.getAll);
+router.get('/:id', _orders2.default.getOne);
+router.put('/:id', _orders2.default.update);
+router.delete('/:id', _orders2.default.delete);
 
 module.exports = router;
