@@ -1,0 +1,57 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: Fast Food Fast
+host: localhost:3000
+basePath: /
+schemes:
+  - http
+consumes:
+  - application/x-www-form-urlencoded
+produces:
+  - application/json
+paths:
+  /auth/signup:          
+    post:
+      description: It enables a user to create an account
+      summary: creates a new user
+      operationId: PostOperations
+      parameters:        
+      - name: firstname
+        in: body
+        required: true
+        description: First Name
+        type: varchar
+      - name: lastname
+        in: body
+        required: true
+        description: Last Name
+        type: varchar
+      - name: email
+        in: body
+        required: true
+        description: email
+        type: varchar
+      - name: password
+        in: body
+        required: true
+        description: password
+        type: varchar
+responses:          
+ 201:
+   description: Created
+   schema:
+     type: object
+     properties:
+       firstname:
+         type: varchar
+         description: The user firstname.
+       lastname:
+         type: varchar
+         description: The user lastname.
+       email:
+         type: varchar
+         description: The user email.
+       password:
+         type: varchar
+         description: The user password.
