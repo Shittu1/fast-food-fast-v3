@@ -37,3 +37,9 @@ Fast Food Fast is an online food ordering service site.
 17. https://medium.freecodecamp.org/how-to-get-started-with-postgresql-9d3bc1dd1b11
 18. https://www.codementor.io/olawalealadeusi896/building-a-simple-api-with-nodejs-expressjs-postgresql-db-and-jwt-3-mke10c5c5
 19. https://www.youtube.com/watch?v=fA0jpjwi4J8
+20. Postgres from the command line - https://www.youtube.com/watch?v=FSDe2qDRDtc
+21. Swagger-Tutorial: https://danielpecos.com/2017/09/06/rest-api-with-node-js-and-swagger/
+22. Swagger-Tutorial-2: https://github.com/cwizard2011/swagger-docs-tutorial/blob/master/docs/pet.yaml
+23. Express + swagger https://www.youtube.com/watch?v=CE01dwNEkEU
+24. Heroku + node + postgres: https://medium.com/@aem_iro/deploying-a-node-js-postgressql-app-to-heroku-hosting-platform-cc611287ae76
+25. API Documentation With Postman https://medium.com/@olotintemitope/how-to-generate-your-api-documentation-in-20-minutes-4e0072f08b94

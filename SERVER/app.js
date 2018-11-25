@@ -4,7 +4,8 @@ import dotenv from 'dotenv';
 import 'babel-polyfill';
 import OrderWithJSObject from './usingJSObject/routes/orders';
 import OrderWithDb from './usingDB/routes/orders';
-import userWithDb from './usingDB/routes/auth';
+import userWithDb from './usingDB/routes/users';
+import authWithDb from './usingDB/routes/auth';
 import menuWithDb from './usingDB/routes/menu';
 
 dotenv.config();
@@ -23,7 +24,8 @@ app.get('/', (req, res) => res.status(200).send({ Message: 'Welcome to Fast food
 
 
 app.use('/api/v1/orders', Order);
-app.use('/auth', userWithDb);
+app.use('/users', userWithDb);
+app.use('/auth', authWithDb);
 app.use('/menu', menuWithDb);
 
 app.listen(PORT, () => {
