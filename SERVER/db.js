@@ -150,3 +150,5 @@ module.exports = {
   dropMenuTable,
   dropAllTables
 };
+
+require('make-runnable');

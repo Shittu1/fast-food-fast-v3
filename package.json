@@ -8,12 +8,15 @@
     "npm": "6.4.0"
   },
   "scripts": {
+    "create-tables": "node ./build/db.js createAllTables",
+    "drop-tables": "node ./build/db.js dropAllTables",
     "build": "babel SERVER -d build",
+    "heroku-postbuild": "npm install --production",
     "lint": "eslint ./SERVER/**",
     "test": "mocha --exit --require babel-core/register --recursive test/**/*.spec.js ",
     "coverage": "nyc report --reporter=text-lcov",
     "coveralls": "nyc npm test && npm run coverage | coveralls",
-    "start-dev": "nodemon --exec babel-node SERVER/app.js",
+    "start:dev": "set NODE_ENV=development npm run tables && npm run build && nodemon ./build/app.js",
     "start": "node ./build/app.js"
   },
   "repository": {
@@ -31,8 +34,9 @@
   },
   "homepage": "https://github.com/Shittu1/fast-food-fast-v3#readme",
   "dependencies": {
-    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
     "bcrypt": "^3.0.2",
     "body-parser": "^1.18.3",
@@ -43,16 +47,10 @@
     "jsonwebtoken": "^8.3.0",
     "make-runnable": "^1.3.6",
     "moment": "^2.22.2",
-    "pg": "^7.6.0",
-    "swagger-jsdoc": "^3.2.3",
-    "swagger-ui": "^3.20.0",
-    "swagger-ui-express": "^4.0.1"
+    "pg": "^7.6.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.1.0",
-    "@babel/register": "^7.0.0",
-    "babel-preset-env": "^1.7.0",
+    "babel-cli": "^6.26.0",
     "coveralls": "^3.0.2",
     "eslint": "^5.7.0",
     "eslint-config-airbnb-base": "^13.1.0",
