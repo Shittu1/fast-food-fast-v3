@@ -43,3 +43,4 @@ Fast Food Fast is an online food ordering service site.
 23. Express + swagger https://www.youtube.com/watch?v=CE01dwNEkEU
 24. Heroku + node + postgres: https://medium.com/@aem_iro/deploying-a-node-js-postgressql-app-to-heroku-hosting-platform-cc611287ae76
 25. API Documentation With Postman https://medium.com/@olotintemitope/how-to-generate-your-api-documentation-in-20-minutes-4e0072f08b94
+Renaming apps and updating in remote heroku - https://devcenter.heroku.com/articles/renaming-apps#updating-git-remotes
