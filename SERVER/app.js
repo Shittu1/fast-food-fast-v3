@@ -13,8 +13,6 @@ const Order = process.env.Type === 'db' ? OrderWithDb : OrderWithJSObject;
 
 const app = express();
 
-const PORT = process.env.PORT || 3000;
-
 app.use(bodyParser.urlencoded({
   extended: true
 }));
@@ -28,6 +26,7 @@ app.use('/users', userWithDb);
 app.use('/auth', authWithDb);
 app.use('/menu', menuWithDb);
 
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`app is running on port ${PORT}`);
 });
