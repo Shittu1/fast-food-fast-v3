@@ -1,31 +1,31 @@
-'use strict';
 
-Object.defineProperty(exports, "__esModule", {
+
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
 
-var _pg = require('pg');
+const _pg = require('pg');
 
-var _dotenv = require('dotenv');
+const _dotenv = require('dotenv');
 
-var _dotenv2 = _interopRequireDefault(_dotenv);
+const _dotenv2 = _interopRequireDefault(_dotenv);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _dotenv2.default.config();
 
-var pool = new _pg.Pool({
-  connectionString: process.env.DATABASE_URL
+const pool = new _pg.Pool({
+  connectionString: process.env.DATABASE_URL || process.env.HEROKU_POSTGRESQL_RED_URL
 });
 
 exports.default = {
   query: function query(text, params) {
-    return new Promise(function (resolve, reject) {
-      pool.query(text, params).then(function (res) {
+    return new Promise(((resolve, reject) => {
+      pool.query(text, params).then((res) => {
         resolve(res);
-      }).catch(function (err) {
+      }).catch((err) => {
         reject(err);
       });
-    });
+    }));
   }
 };

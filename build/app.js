@@ -45,8 +45,6 @@ var Order = process.env.Type === 'db' ? _orders4.default : _orders2.default;
 
 var app = (0, _express2.default)();
 
-var PORT = process.env.PORT || 3000;
-
 app.use(_bodyParser2.default.urlencoded({
   extended: true
 }));
@@ -61,6 +59,7 @@ app.use('/users', _users2.default);
 app.use('/auth', _auth2.default);
 app.use('/menu', _menu2.default);
 
+var PORT = process.env.PORT || 3000;
 app.listen(PORT, function () {
   console.log('app is running on port ' + PORT);
 });
